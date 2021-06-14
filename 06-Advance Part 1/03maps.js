@@ -23,3 +23,6 @@ for(let [key, value] of myMap){
 }
 
 myMap.forEach( (key) => console.log(`${key}`) );
+
+myMap.delete(2);
+console.log(myMap);
