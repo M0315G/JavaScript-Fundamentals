@@ -7,17 +7,17 @@ class User{
         this.email = email;
     }
 
-    courseList = [];
+    #courseList = [];
     getInfo(){
         return {name: this.name, email:this.email};
     }
 
     enrollCourse(name){
-        this.courseList.push(name);
+        this.#courseList.push(name);
     }
 
     getCourseList(){
-        return this.courseList;
+        return this.#courseList;
     }
 }
 
@@ -25,3 +25,10 @@ class User{
 // let manish = new User("Manish", "xyz@gmail.com")
 
 module.exports = User;
+
+const rock = new User("rock", "rock@rock.com");
+console.log(rock.getInfo());
+rock.enrollCourse("Angular Bootcamp");
+console.log(rock.getCourseList());
+// Adding # before the variable makes it private and we cannot access it directly
+console.log(rock.courseList);
